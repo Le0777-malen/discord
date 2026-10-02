@@ -19,4 +19,4 @@ async def ciao(ctx):
 async def pasw(ctx):
     await ctx.send(gen_pass(10))
 
-bot.run("MTU1MzA3NzE2NjY0Njc2MzY4Mg.Gri5Ya._k7dYPcPiin9ytKlDhzZ24dnZjI8EvDxLR3Ghc")
+bot.run("token")
