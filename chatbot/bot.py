@@ -1,7 +1,10 @@
 import discord
+import random
 from discord.ext import commands
 from bot_logic import gen_pass
 from bot_logic import carta_forbice_sasso
+from bot_logic import mt\
+
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -35,9 +38,14 @@ async def roll(ctx, dice: str):
     """Rolls a dice in NdN format."""
     try:
         rolls, limit = map(int, dice.split('d'))
-        await ctx.send()
     except Exception:
         await ctx.send('Format has to be in NdN!')
         return
+
+    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    await ctx.send(result)
+@bot.command()
+async def meteo(ctx):
+    await ctx.send(mt())
   
 bot.run("token")
