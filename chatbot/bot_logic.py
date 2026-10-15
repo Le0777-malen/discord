@@ -1,4 +1,5 @@
 import random
+import requests
 
 def gen_pass(pass_length):
     elements = "+-/*!&$#?=@<>"
@@ -30,4 +31,10 @@ def mt():
         return("Fa troppo caldo, mettiti un berretto")
     elif temp > 32:
         return("fatti un bagno a mare!")
+        
+def get_dog_image_url():    
+    url = 'https://random.dog/woof.json'
+    res = requests.get(url)
+    data = res.json()
+    return data['url']
         
