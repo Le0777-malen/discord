@@ -56,13 +56,15 @@ async def meteo(ctx):
 
 @bot.command()
 async def mem(ctx):
+    rarita = ['comuni', 'rare', 'leggendarie']
+    probabilita = [70, 25, 5]
+    scelta_rarita = random.choices(rarita, weights=probabilita, k=1)[0]
     choice = random.choice(os.listdir('images'))
-
     with open(f'images/{choice}', 'rb') as f:
     # Memorizziamo il file della libreria di Discord convertito in questa variabile!
         picture = discord.File(f)
     # Possiamo quindi inviare questo file come parametro!
-    await ctx.send(file=picture)
+    await ctx.send(f"Hai trovato un meme della categoria: **{scelta_rarita.upper()}**!", file=picture)
 
 
 
